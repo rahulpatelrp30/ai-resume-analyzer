@@ -1,0 +1,59 @@
+JOHN DOE
+Full Stack Developer
+Email: john.doe@email.com | Phone: (555) 123-4567
+LinkedIn: linkedin.com/in/johndoe | GitHub: github.com/johndoe
+
+PROFESSIONAL SUMMARY
+Experienced Full Stack Developer with 5+ years of expertise in building scalable web applications.
+Strong background in React, Node.js, Python, and cloud technologies. Passionate about creating
+user-friendly solutions and implementing best practices in software development.
+
+TECHNICAL SKILLS
+- Frontend: React, JavaScript, TypeScript, HTML5, CSS3, TailwindCSS, Redux
+- Backend: Node.js, Python, FastAPI, Express.js, REST APIs
+- Databases: PostgreSQL, MongoDB, MySQL, Redis
+- Cloud & DevOps: AWS, Docker, Kubernetes, CI/CD, Git
+- Testing: Jest, Pytest, Unit Testing, Integration Testing
+- Tools: VS Code, Postman, Jira, Figma
+
+PROFESSIONAL EXPERIENCE
+
+Senior Full Stack Developer | Tech Solutions Inc. | 2021 - Present
+- Developed and maintained 10+ React-based web applications serving 100K+ users
+- Built RESTful APIs using Node.js and Python FastAPI with 99.9% uptime
+- Implemented responsive UI designs using React and TailwindCSS
+- Optimized database queries reducing response time by 40%
+- Collaborated with cross-functional teams using Agile methodologies
+- Mentored 5 junior developers on best coding practices
+
+Full Stack Developer | StartUp Labs | 2019 - 2021
+- Created microservices architecture using Docker and Kubernetes
+- Developed real-time features using WebSockets and Redis
+- Integrated third-party APIs including payment gateways and analytics
+- Implemented automated testing achieving 85% code coverage
+- Participated in code reviews and sprint planning sessions
+
+PROJECTS
+
+E-Commerce Platform
+- Built full-stack e-commerce site with React, Node.js, and PostgreSQL
+- Implemented secure payment processing and order management
+- Technologies: React, Express.js, PostgreSQL, Stripe API
+
+Task Management App
+- Developed collaborative task management tool with real-time updates
+- Features: drag-and-drop interface, user authentication, notifications
+- Technologies: React, FastAPI, MongoDB, WebSockets
+
+EDUCATION
+Bachelor of Science in Computer Science
+University of Technology | 2015 - 2019
+
+CERTIFICATIONS
+- AWS Certified Developer Associate
+- MongoDB Certified Developer
+
+ACHIEVEMENTS
+- Led migration of legacy system to modern tech stack, improving performance by 60%
+- Open source contributor with 500+ GitHub stars across projects
+- Speaker at local tech meetups on React best practices

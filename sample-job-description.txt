@@ -1,0 +1,49 @@
+Senior Software Engineer - Full Stack
+
+Company: Innovative Tech Corp
+Location: Remote
+Type: Full-time
+
+Job Description:
+We are seeking a talented Senior Full Stack Developer to join our growing engineering team. 
+You will be responsible for designing, developing, and maintaining scalable web applications 
+that serve millions of users worldwide.
+
+Required Skills:
+- 5+ years of experience in full stack development
+- Strong proficiency in React, TypeScript, and modern JavaScript
+- Experience with Python and FastAPI or Django
+- Solid understanding of RESTful API design and implementation
+- Experience with PostgreSQL or other relational databases
+- Knowledge of cloud platforms (AWS, Azure, or GCP)
+- Familiarity with Docker and container orchestration
+- Experience with Git version control and CI/CD pipelines
+- Strong problem-solving skills and attention to detail
+- Excellent communication and teamwork abilities
+
+Nice to Have:
+- Experience with GraphQL
+- Knowledge of microservices architecture
+- Experience with Kubernetes
+- Familiarity with Redis and caching strategies
+- Background in automated testing (Jest, Pytest)
+- Experience with TailwindCSS or modern CSS frameworks
+- Understanding of Agile/Scrum methodologies
+- Contributions to open source projects
+
+Responsibilities:
+- Design and develop new features for our web platform
+- Write clean, maintainable, and well-tested code
+- Collaborate with product managers and designers
+- Participate in code reviews and mentor junior developers
+- Optimize application performance and scalability
+- Troubleshoot and resolve production issues
+- Stay updated with latest technology trends
+
+What We Offer:
+- Competitive salary and equity package
+- Flexible remote work policy
+- Health, dental, and vision insurance
+- Professional development budget
+- Collaborative and inclusive work environment
+- Opportunity to work on cutting-edge technologies
