@@ -732,21 +732,20 @@ We're looking for a Senior Software Engineer with 5+ years of experience in Pyth
     </div>
 
     <script>
-        const API_URL = 'http://localhost:8001';
+        // Use Render backend for GitHub Pages, localhost for local development
         const IS_GITHUB_PAGES = window.location.hostname.includes('github.io');
+        const API_URL = IS_GITHUB_PAGES ? 'https://ai-resume-analyzer-hcc2.onrender.com' : 'http://localhost:8001';
         let currentStep = 1;
         
-        // Show info banner on GitHub Pages
+        // Show success banner on GitHub Pages
         if (IS_GITHUB_PAGES) {
             window.addEventListener('DOMContentLoaded', () => {
                 const banner = document.createElement('div');
-                banner.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 20px; text-align: center; z-index: 10000; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; box-shadow: 0 4px 20px rgba(0,0,0,0.3); font-size: 15px;';
+                banner.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 15px 20px; text-align: center; z-index: 10000; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; box-shadow: 0 4px 20px rgba(0,0,0,0.3); font-size: 15px;';
                 banner.innerHTML = `
                     <div style="max-width: 1200px; margin: 0 auto;">
-                        <strong>🎯 Live Demo Interface</strong> • This page shows the app UI. To analyze resumes, 
-                        <a href="https://github.com/rahulpatelrp30/ai-resume-analyzer#-installation--setup" target="_blank" style="color: #fff; text-decoration: underline; font-weight: 600;">run the backend locally</a> 
-                        or view the 
-                        <a href="https://github.com/rahulpatelrp30/ai-resume-analyzer" target="_blank" style="color: #fff; text-decoration: underline; font-weight: 600;">source code on GitHub</a>
+                        <strong>✅ Fully Functional!</strong> • This app is connected to a live backend. Upload your resume and try it! 
+                        <a href="https://github.com/rahulpatelrp30/ai-resume-analyzer" target="_blank" style="color: #fff; text-decoration: underline; font-weight: 600;">View Source Code</a>
                     </div>
                 `;
                 document.body.insertBefore(banner, document.body.firstChild);
