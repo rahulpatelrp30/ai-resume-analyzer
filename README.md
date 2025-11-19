@@ -39,18 +39,30 @@ ai-resume-analyzer/
 ### Prerequisites
 
 - **Java 17** or higher ([Download here](https://adoptium.net/))
-- **Gradle 8.5+** (included via wrapper)
+- **Python 3.x** (for frontend server)
 - **OpenAI API key** (optional, for AI features)
 
-### Installation
+### 🎯 Easiest Way to Run (Windows)
 
-1. **Clone the repository**
+```powershell
+cd ai-resume-analyzer
+.\START-RESUME-ANALYZER.ps1
+```
+
+This script will:
+1. Start the Java backend on port 8001
+2. Start the frontend server on port 3000
+3. Open the app in your browser automatically
+
+### 📋 Manual Setup
+
+#### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/ai-resume-analyzer.git
+git clone https://github.com/rahulpatelrp30/ai-resume-analyzer.git
 cd ai-resume-analyzer
 ```
 
-2. **Set up OpenAI API key** (Optional)
+#### 2. Set up OpenAI API key (Optional)
 ```bash
 # Windows PowerShell
 $env:OPENAI_API_KEY = "your-api-key-here"
@@ -59,74 +71,72 @@ $env:OPENAI_API_KEY = "your-api-key-here"
 export OPENAI_API_KEY="your-api-key-here"
 ```
 
-3. **Build the project**
+#### 3. Start the Backend (Java Spring Boot)
 ```bash
 cd backend-java
-./gradlew build
+# Windows
+.\gradlew.bat bootRun
+
+# Linux/Mac
+./gradlew bootRun
 ```
 
-3. Set up environment variables:
+Backend runs at: `http://localhost:8001`
+
+#### 4. Start the Frontend (in a new terminal)
 ```bash
-cp .env.example .env
-# Edit .env and add your OPENAI_API_KEY
+cd ai-resume-analyzer
+python -m http.server 3000
 ```
 
-4. Run the server:
-```bash
-uvicorn main:app --reload
-```
+#### 5. Open the Application
+Visit: `http://localhost:3000/app-improved.html`
 
-Backend will run at `http://localhost:8000`
+### 🧪 Test the Application
 
-### Frontend Setup
+1. **Upload** a resume (PDF or TXT)
+2. **Paste** a job description
+3. **Click** "Analyze Resume"
+4. **View** results in 2-3 seconds
 
-1. Navigate to frontend:
-```bash
-cd frontend
-```
+## 🌐 Live Demo
 
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start development server:
-```bash
-npm run dev
-```
-
-Frontend will run at `http://localhost:3000`
+**GitHub Pages:** https://rahulpatelrp30.github.io/ai-resume-analyzer/app-improved.html
+- Shows the application interface
+- Requires local backend setup for full functionality
+- See setup instructions above
 
 ## 📖 Usage
 
-1. **Open the app** at `http://localhost:3000`
-2. **Upload your resume** (PDF format)
-3. **Paste a job description** you're interested in
-4. **Click "Analyze Resume"**
-5. **Review results**:
-   - Overall match score (0-100)
-   - Matched skills ✅
-   - Missing skills ⚠️
-   - AI-generated improvement suggestions 💡
+Once both servers are running:
 
-## 🧪 How It Works
+1. **Open** `http://localhost:3000/app-improved.html` in your browser
+2. **Upload your resume** (PDF or TXT format, max 10MB)
+3. **Paste the job description** you're targeting
+4. **Click "Analyze Resume"**
+5. **Review detailed results**:
+   - 📊 Match score (0-100%)
+   - ✅ Matched skills between resume and job
+   - ⚠️ Missing skills to add
+   - 🎯 ATS compatibility score
+   - 💡 AI-generated improvement suggestions (if OpenAI key is configured)
+
+## 🔧 How It Works
 
 ### 1. Resume Parsing
-- Uses `pdfplumber` to extract text from PDF resumes
-- Handles multi-page documents
+- Uses Apache PDFBox to extract text from PDF resumes
+- Also supports plain text (.txt) files
+- Handles multi-page documents efficiently
 
-### 2. Skill Extraction
-- Maintains a database of 70+ technical skills
-- Uses regex pattern matching to identify skills in both resume and job description
-- Case-insensitive with word boundary detection
+### 2. Skills Extraction
+- Database of 50+ technical skills (Java, Python, Spring Boot, React, etc.)
+- Pattern matching with word boundaries for accurate detection
+- Identifies skills in both resume and job description
 
 ### 3. Matching Algorithm
-```
-Final Score = (0.6 × Keyword Score) + (0.4 × Semantic Score)
-```
-
-- **Keyword Score**: Percentage of job skills found in resume
-- **Semantic Score**: Cosine similarity between embeddings (0-1)
+- **Keyword Matching**: Direct skill matches between resume and job
+- **Cosine Similarity**: Semantic comparison of text content
+- **ATS Scoring**: Format, keyword density, section completeness
 
 ### 4. AI Feedback
 - Uses OpenAI's GPT-4 to generate personalized suggestions
