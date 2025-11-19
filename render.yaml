@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: ai-resume-analyzer
+    runtime: java
+    buildCommand: cd backend-java && ./gradlew build -x test
+    startCommand: cd backend-java && java -jar build/libs/*.jar
+    envVars:
+      - key: JAVA_TOOL_OPTIONS
+        value: -Xmx512m
+      - key: PORT
+        value: 8001
+      - key: OPENAI_API_KEY
+        sync: false
+    healthCheckPath: /health
