@@ -1,37 +1,66 @@
 # 🎯 AI Resume Analyzer
 
-**An intelligent resume analysis system powered by Java Spring Boot and OpenAI GPT-4. Upload your resume and job description to get instant AI-powered feedback, skills matching, and ATS optimization tips.**
+**An intelligent resume analysis system powered by Java Spring Boot and AI. Upload your resume and job description to get instant feedback, skills matching, and ATS optimization tips.**
 
 ![Java](https://img.shields.io/badge/Java-17-orange) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2.0-brightgreen) ![License](https://img.shields.io/badge/license-MIT-blue)
 
-## 🌟 Features
+## 🌐 Live Demo
 
-- **🤖 AI-Powered Analysis** - Leverages OpenAI GPT-4 for intelligent resume feedback
-- **📊 Skills Extraction** - Automatically identifies 50+ technical skills from resumes
-- **✅ ATS Scoring** - Evaluates resume compatibility with Applicant Tracking Systems
-- **🎯 Semantic Matching** - Uses cosine similarity algorithms for accurate job-resume matching
-- **📄 Multiple Formats** - Supports PDF and text file uploads (up to 10MB)
-- **⚡ Real-time Results** - Get comprehensive analysis in under 3 seconds
+**Try it now:** [https://rahulpatelrp30.github.io/ai-resume-analyzer/](https://rahulpatelrp30.github.io/ai-resume-analyzer/)
 
-## 🏗️ Architecture
+## 📸 Screenshots
+
+### Match Score & Overview
+![Match Score](https://raw.githubusercontent.com/rahulpatelrp30/ai-resume-analyzer/main/screenshots/match-score.png)
+*Get an instant match score showing how well your resume aligns with the job requirements*
+
+### AI-Powered Analysis
+![AI Analysis](https://raw.githubusercontent.com/rahulpatelrp30/ai-resume-analyzer/main/screenshots/ai-analysis.png)
+*Receive key strengths identified by AI analysis*
+
+### ATS Compatibility Score
+![ATS Score](https://raw.githubusercontent.com/rahulpatelrp30/ai-resume-analyzer/main/screenshots/ats-score.png)
+*Check your resume's compatibility with Applicant Tracking Systems*
+
+### Skills Analysis
+![Skills Analysis](https://raw.githubusercontent.com/rahulpatelrp30/ai-resume-analyzer/main/screenshots/skills-analysis.png)
+*See which skills match and which are missing from your resume*
+
+## ✨ What This App Does
+
+This tool helps you **improve your resume** by:
+
+1. 📤 **Upload** your resume (PDF or text file)
+2. 📋 **Paste** a job description you're applying to
+3. 🤖 **Get AI analysis** showing:
+   - **Match Score** - How well your resume fits the job (%)
+   - **Skills Found** - Technical skills you have that match
+   - **Skills Missing** - Important skills you should add
+   - **ATS Score** - How well automated systems will read your resume
+   - **AI Insights** - Key strengths and improvement suggestions
+
+## 🌟 Key Features
+
+- ✅ **Real-time Analysis** - Results in under 3 seconds
+- 🎯 **Skills Matching** - Identifies 50+ technical skills automatically
+- 📊 **ATS Scoring** - Checks format, keywords, and structure
+- 🤖 **AI Insights** - Powered by advanced language models
+- 📄 **Multiple Formats** - Supports PDF and text files (up to 10MB)
+- 🌐 **Works Online** - No installation needed, just visit the link
+
+## 📁 Project Structure
 
 ```
 ai-resume-analyzer/
-├── backend-java/              # Java Spring Boot backend
-│   ├── src/main/
-│   │   ├── java/com/resume/analyzer/
-│   │   │   ├── config/        # CORS, OpenAI configuration
-│   │   │   ├── controller/    # REST API endpoints
-│   │   │   ├── service/       # Business logic (PDF, Skills, ATS, AI)
-│   │   │   ├── model/         # DTOs and response objects
-│   │   │   └── exception/     # Custom exception handling
-│   │   └── resources/
-│   │       └── application.properties
-│   └── build.gradle           # Gradle dependencies
-│
-├── app-improved.html          # Frontend UI
-├── sample-resume.txt          # Example resume
-└── sample-job-description.txt # Example job posting
+├── backend-java/              # Java Spring Boot API
+│   ├── src/main/java/         # Java source code
+│   │   ├── controller/        # REST endpoints (/analyze, /health)
+│   │   ├── service/           # Business logic
+│   │   └── model/             # Data models
+│   └── build.gradle           # Dependencies
+├── app-improved.html          # Main application UI
+├── screenshots/               # Demo screenshots
+└── START-RESUME-ANALYZER.ps1  # Quick start script
 ```
 
 ## 🚀 Quick Start
@@ -62,66 +91,56 @@ git clone https://github.com/rahulpatelrp30/ai-resume-analyzer.git
 cd ai-resume-analyzer
 ```
 
-#### 2. Set up OpenAI API key (Optional)
-```bash
-# Windows PowerShell
-$env:OPENAI_API_KEY = "your-api-key-here"
+## 💻 Run Locally (Optional)
 
-# Linux/Mac
-export OPENAI_API_KEY="your-api-key-here"
+Want to run your own copy? It's easy!
+
+### ⚡ Quick Start (Windows)
+```powershell
+.\START-RESUME-ANALYZER.ps1
 ```
 
-#### 3. Start the Backend (Java Spring Boot)
+### 📋 Manual Setup
+
+**Step 1:** Install Java 17+ ([Download](https://adoptium.net/))
+
+**Step 2:** Clone the project
+```bash
+git clone https://github.com/rahulpatelrp30/ai-resume-analyzer.git
+cd ai-resume-analyzer
+```
+
+**Step 3:** Start the backend
 ```bash
 cd backend-java
-# Windows
-.\gradlew.bat bootRun
-
-# Linux/Mac
-./gradlew bootRun
+.\gradlew.bat bootRun       # Windows
+./gradlew bootRun           # Mac/Linux
 ```
 
-Backend runs at: `http://localhost:8001`
-
-#### 4. Start the Frontend (in a new terminal)
+**Step 4:** Open in browser (new terminal)
 ```bash
-cd ai-resume-analyzer
 python -m http.server 3000
 ```
 
-#### 5. Open the Application
-Visit: `http://localhost:3000/app-improved.html`
-
-### 🧪 Test the Application
-
-1. **Upload** a resume (PDF or TXT)
-2. **Paste** a job description
-3. **Click** "Analyze Resume"
-4. **View** results in 2-3 seconds
-
-## 🌐 Live Demo
-
-**GitHub Pages:** https://rahulpatelrp30.github.io/ai-resume-analyzer/app-improved.html
-- Shows the application interface
-- Requires local backend setup for full functionality
-- See setup instructions above
-
-## 📖 Usage
-
-Once both servers are running:
-
-1. **Open** `http://localhost:3000/app-improved.html` in your browser
-2. **Upload your resume** (PDF or TXT format, max 10MB)
-3. **Paste the job description** you're targeting
-4. **Click "Analyze Resume"**
-5. **Review detailed results**:
-   - 📊 Match score (0-100%)
-   - ✅ Matched skills between resume and job
-   - ⚠️ Missing skills to add
-   - 🎯 ATS compatibility score
-   - 💡 AI-generated improvement suggestions (if OpenAI key is configured)
+**Step 5:** Visit `http://localhost:3000/app-improved.html`
 
 ## 🔧 How It Works
+
+**Simple explanation:**
+
+1. **You upload** your resume and paste a job description
+2. **Backend reads** the resume using Apache PDFBox
+3. **Skills engine** searches for 50+ technical skills (Java, Python, React, etc.)
+4. **Matching algorithm** compares your skills vs. job requirements
+5. **ATS checker** analyzes format, keywords, and sections
+6. **AI model** (optional) provides personalized feedback
+7. **Results page** shows your scores and suggestions
+
+**Tech Stack:**
+- **Backend:** Java 17, Spring Boot 3.2, Apache PDFBox
+- **Frontend:** HTML/CSS/JavaScript
+- **AI:** OpenAI GPT-4 (optional)
+- **Deployment:** GitHub Pages + Render
 
 ### 1. Resume Parsing
 - Uses Apache PDFBox to extract text from PDF resumes
